@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanglaTools (বাংলাটুলস) - বাংলায় প্রয়োজনীয় সব ডিজিটাল টুলস</title>
+    <meta name="description" content="বাংলাটুলস - বিজয় থেকে ইউনিকোড কনভার্টার, বাংলা বয়স ক্যালকুলেটর, বাংলা তারিখ রূপান্তর, সংখ্যা রূপান্তর ও শব্দ গণনাকারী সহ প্রয়োজনীয় সব বাংলা ডিজিটাল টুলস।">
+    <meta name="keywords" content="Bangla Tools, Bijoy to Unicode, Unicode to Bijoy, Bangla Age Calculator, Bangla Date Today, Bangla Number Converter, শব্দ গণনা">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://banglatools.com/">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="BanglaTools - বাংলায় প্রয়োজনীয় সব ডিজিটাল টুলস">
+    <meta property="og:description" content="বিজয় ↔ ইউনিকোড, বয়স ক্যালকুলেটর, বাংলা তারিখ কনভার্টার ও ফ্রি বাংলা ডিজিটাল টুলস।">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BanglaTools",
+      "url": "https://banglatools.com",
+      "description": "বাংলায় প্রয়োজনীয় সব ডিজিটাল টুলস - বিজয় ইউনিকোড কনভার্টার, বয়স ক্যালকুলেটর, বাংলা তারিখ রূপান্তর।",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "inLanguage": "bn"
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2.5 space-x-reverse group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-[#67] fa-language text-xl"></i>
+                    <span class="font-bold text-xl tracking-tight leading-none hidden">BT</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold bg-gradient-to-r from-brand-700 to-teal-700 bg-clip-text text-transparent">BanglaTools</span>
+                    <span class="text-[10px] text-slate-500 -mt-1 font-medium tracking-wide">ডিজিটাল বাংলা সরঞ্জাম</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+                <a href="#converter-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">বিজয়/ইউনিকোড</a>
+                <a href="#age-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">বয়স ক্যালকুলেটর</a>
+                <a href="#date-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">বাংলা তারিখ</a>
+                <a href="#number-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">সংখ্যা রূপান্তর</a>
+                <a href="#counter-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">শব্দ গণনা</a>
+            </nav>
+
+            <!-- Quick Action & Mobile Menu Toggle -->
+            <div class="flex items-center space-x-3">
+                <a href="#tools-grid" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-sm transition-all active:scale-95">
+                    <i class="fa-solid fa-grid-2 mr-1.5 text-xs"></i> সব টুলস
+                </a>
+
+                <!-- Hamburger Button -->
+                <button id="mobile-menu-btn" aria-label="মেনু খুলুন" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl animate-fade-in">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1">টুলস শর্টকাট</div>
+            <a href="#converter-section" onclick="toggleMobileMenu()" class="flex items-center px-3 py-2.5 rounded-xl text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">
+                <i class="fa-solid fa-[#67] fa-right-left text-brand-500 w-7"></i> বিজয় ↔ ইউনিকোড রূপান্তর
+            </a>
+            <a href="#age-section" onclick="toggleMobileMenu()" class="flex items-center px-3 py-2.5 rounded-xl text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">
+                <i class="fa-solid fa-cake-candles text-brand-500 w-7"></i> বাংলা বয়স ক্যালকুলেটর
+            </a>
+            <a href="#date-section" onclick="toggleMobileMenu()" class="flex items-center px-3 py-2.5 rounded-xl text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">
+                <i class="fa-solid fa-calendar-days text-brand-500 w-7"></i> বাংলা তারিখ কনভার্টার
+            </a>
+            <a href="#number-section" onclick="toggleMobileMenu()" class="flex items-center px-3 py-2.5 rounded-xl text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">
+                <i class="fa-solid fa-[#30] fa-arrow-right-arrow-left text-brand-500 w-7"></i> সংখ্যা ও কথায় প্রকাশ
+            </a>
+            <a href="#counter-section" onclick="toggleMobileMenu()" class="flex items-center px-3 py-2.5 rounded-xl text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">
+                <i class="fa-solid fa-calculator text-brand-500 w-7"></i> শব্দ ও অক্ষর গণনাকারী
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-b from-brand-50/70 via-white to-slate-50 pt-10 pb-12 sm:pt-16 sm:pb-20 overflow-hidden border-b border-slate-100">
+            <!-- Decorative Blobs -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
+                <div class="absolute -top-24 left-10 w-72 h-72 bg-emerald-300 rounded-full blur-3xl mix-blend-multiply"></div>
+                <div class="absolute top-10 right-10 w-80 h-80 bg-teal-300 rounded-full blur-3xl mix-blend-multiply"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-800 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    ১০০% ফ্রী, দ্রুত ও নিরাপদ বাংলা টুলস
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-snug mb-4">
+                    বাংলায় প্রয়োজনীয় সব <span class="bg-gradient-to-r from-brand-600 to-teal-600 bg-clip-text text-transparent">ডিজিটাল টুলস</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                    বিজয় টু ইউনিকোড কনভার্টার, সঠিক বয়স ক্যালকুলেটর, বাংলা বঙ্গাব্দ তারিখ রূপান্তর এবং শব্দ গণনা সহ আপনার দৈনন্দিন কাজকে সহজ করতে তৈরি সব সুবিধা এক ছাদের নিচে।
+                </p>
+
+                <!-- Search Input Bar -->
+                <div class="max-w-xl mx-auto relative group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-brand-600 transition">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </div>
+                    <input type="text" id="tool-search" onkeyup="filterTools()" placeholder="প্রয়োজনীয় টুল খুঁজুন (যেমন: বিজয়, তারিখ, বয়স...)" class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 text-sm sm:text-base shadow-lg shadow-slate-200/50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                </div>
+
+                <!-- Quick Tags -->
+                <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs text-slate-500">
+                    <span class="font-medium">জনপ্রিয়:</span>
+                    <button onclick="quickFilter('বিজয়')" class="hover:text-brand-600 underline decoration-slate-300">বিজয় ↔ ইউনিকোড</button>
+                    <span>•</span>
+                    <button onclick="quickFilter('বয়স')" class="hover:text-brand-600 underline decoration-slate-300">বয়স হিসেব</button>
+                    <span>•</span>
+                    <button onclick="quickFilter('তারিখ')" class="hover:text-brand-600 underline decoration-slate-300">আজকের বাংলা তারিখ</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Bangla Date Widget Banner -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-6 relative z-20">
+            <div class="glass-card rounded-2xl p-4 sm:p-5 shadow-lg border border-slate-200/80 bg-white/90 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-3.5 space-x-reverse">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0 border border-brand-100">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-brand-600 uppercase tracking-wider">আজকের বঙ্গাব্দ ও খ্রিস্টাব্দ তারিখ</div>
+                        <div id="today-bangla-display" class="text-sm sm:text-base font-bold text-slate-800 mt-0.5">
+                            লোড হচ্ছে...
+                        </div>
+                    </div>
+                </div>
+                <a href="#date-section" class="w-full sm:w-auto text-center px-4 py-2 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-700 text-xs font-bold transition">
+                    তারিখ রূপান্তর করুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tools Grid Section -->
+        <section id="tools-grid" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+            
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">ডিজিটাল টুলস তালিকা</h2>
+                    <p class="text-sm text-slate-500">আপনার প্রয়োজনীয় টুলটিতে ক্লিক করে কাজ শুরু করুন</p>
+                </div>
+            </div>
+
+            <!-- Tool Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-container">
+
+                <!-- Tool Card 1: Bijoy <-> Unicode Converter -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="বিজয় ইউনিকোড রূপান্তর বিজয় টু ইউনিকোড">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-[#67] fa-right-left"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">সর্বাধিক ব্যবহৃত</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">বিজয় ↔ ইউনিকোড কনভার্টার</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            বিজয় ফন্টে লেখা টেক্সট কে সহজেই ইউনিকোড এ এবং ইউনিকোড ফন্ট কে বিজয়ে রূপান্তরিত করুন নির্ভুলভাবে।
+                        </p>
+                    </div>
+                    <a href="#converter-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool Card 2: Age Calculator -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="বয়স ক্যালকুলেটর বাংলা বয়স গণনা">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-100 text-blue-800">জনপ্রিয়</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">বাংলা বয়স ক্যালকুলেটর</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            আপনার জন্মতারিখ দিন এবং বছর, মাস, দিন, ঘণ্টা ও পরবর্তী জন্মদিনের নিখুঁত হিসাব এক ক্লিকে পান।
+                        </p>
+                    </div>
+                    <a href="#age-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool Card 3: Date Converter -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="বাংলা তারিখ কনভার্টার বঙ্গাব্দ হিজরি ইংরেজি তারিখ">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-100 text-purple-800">সহজ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">ইংরেজি ↔ বাংলা তারিখ</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            ইংরেজি যেকোনো তারিখ থেকে বাংলা বঙ্গাব্দ তারিখ ও ঋতু সহজে বের করার সুবিধা।
+                        </p>
+                    </div>
+                    <a href="#date-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool Card 4: Number Converter -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="সংখ্যা রূপান্তর ইংরেজি বাংলা সংখ্যা কথায় প্রকাশ">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800">ইউটিলিটি</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">সংখ্যা ও কথায় রূপান্তর</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            ইংরেজি সংখ্যা থেকে বাংলা সংখ্যায় এবং যেকোনা সংখ্যাকে বাংলায় কথায় রূপান্তর করার টুল।
+                        </p>
+                    </div>
+                    <a href="#number-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool Card 5: Word Counter -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="শব্দ গণনা অক্ষর গণনাকারী ওয়ার্ড কাউন্টার">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-align-left"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800">রাইটিং</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">শব্দ ও অক্ষর গণনাকারী</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            আপনার লেখার মোট শব্দ, অক্ষর, অনুচ্ছেদ ও আনুমানিক পড়ার সময় রিয়েল-টাইমে বের করুন।
+                        </p>
+                    </div>
+                    <a href="#counter-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool Card 6: EMI & Text Utility -->
+                <div class="tool-card glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200 flex flex-col justify-between" data-title="ঋণ ইএমআই ক্যালকুলেটর টেক্সট ফরম্যাটার">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-[#30] fa-calculator"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-teal-100 text-teal-800">হিসাব</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">ঋণ ও শতাংশ ক্যালকুলেটর</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                            ব্যাংক লোন বা যেকোনো ঋণের মাসিক ইএমআই (EMI) এবং বাংলা শতাংশের হিসাব দ্রুত বের করুন।
+                        </p>
+                    </div>
+                    <a href="#loan-section" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white hover:bg-brand-600 text-xs font-bold transition">
+                        ব্যবহার করুন <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TOOL WORKSPACE SECTIONS -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12 pb-20">
+            
+            <!-- SECTION 1: Bijoy <-> Unicode Converter -->
+            <section id="converter-section" class="scroll-mt-20">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/80">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-repeat"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-800">বিজয় ↔ ইউনিকোড কনভার্টার</h2>
+                                <p class="text-xs text-slate-500">সহজেই বিজয় থেকে ইউনিকোড অথবা ইউনিকোড থেকে বিজয়ে পরিবর্তন করুন</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Converter Mode Tabs -->
+                    <div class="flex bg-slate-100 p-1 rounded-2xl mb-6 max-w-xs text-xs font-bold">
+                        <button id="btn-mode-b2u" onclick="setConverterMode('b2u')" class="flex-1 py-2 rounded-xl bg-white text-brand-700 shadow-sm transition">
+                            বিজয় ➔ ইউনিকোড
+                        </button>
+                        <button id="btn-mode-u2b" onclick="setConverterMode('u2b')" class="flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition">
+                            ইউনিকোড ➔ বিজয়
+                        </button>
+                    </div>
+
+                    <!-- Input / Output Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Input Box -->
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label id="lbl-input" class="text-xs font-bold text-slate-700">বিজয় ইনপুট দিন:</label>
+                                <button onclick="clearConverterInput()" class="text-xs text-slate-400 hover:text-rose-500 transition">
+                                    <i class="fa-solid fa-trash-can mr-1"></i> পরিষ্কার করুন
+                                </button>
+                            </div>
+                            <textarea id="converter-input" placeholder="এখানে টেক্সট পেস্ট বা টাইপ করুন..." class="w-full h-48 sm:h-56 p-4 rounded-2xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm sm:text-base focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none transition" oninput="liveConvert()"></textarea>
+                        </div>
+
+                        <!-- Output Box -->
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label id="lbl-output" class="text-xs font-bold text-slate-700">ইউনিকোড আউটপুট:</label>
+                                <div class="space-x-2">
+                                    <button onclick="copyConverterOutput()" class="text-xs font-bold px-3 py-1 bg-brand-50 text-brand-700 border border-brand-200 rounded-lg hover:bg-brand-100 transition">
+                                        <i class="fa-solid fa-copy mr-1"></i> কপি করুন
+                                    </button>
+                                </div>
+                            </div>
+                            <textarea id="converter-output" readonly placeholder="রূপান্তরিত ফলাফল এখানে দেখাবে..." class="w-full h-48 sm:h-56 p-4 rounded-2xl border border-slate-200 bg-slate-100 text-slate-800 text-sm sm:text-base focus:outline-none resize-none transition font-sans"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Action Controls -->
+                    <div class="mt-6 flex flex-wrap items-center justify-between gap-4 bg-slate-50 p-4 rounded-2xl">
+                        <div class="text-xs text-slate-500">
+                            <i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> টিপস: আপনি সরাসরি টাইপ করার সাথে সাথে আউটপুট দেখতে পাবেন।
+                        </div>
+                        <button onclick="copyConverterOutput()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition active:scale-95">
+                            <i class="fa-solid fa-copy mr-1.5"></i> কপি আউটপুট
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Age Calculator -->
+            <section id="age-section" class="scroll-mt-20">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/80">
+                    <div class="flex items-center space-x-3 space-x-reverse border-b border-slate-100 pb-4 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800">বাংলা বয়স ক্যালকুলেটর</h2>
+                            <p class="text-xs text-slate-500">সঠিক জন্মতারিখ বেছে নিয়ে নিখুঁত বয়স হিসাব করুন</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <!-- Inputs -->
+                        <div class="space-y-4 bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">আপনার জন্মতারিখ বেছে নিন:</label>
+                                <input type="date" id="dob-input" class="w-full p-3 rounded-xl border border-slate-300 bg-white text-slate-800 focus:ring-2 focus:ring-brand-500 text-sm font-semibold">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">কোন তারিখ পর্যন্ত হিসাব করতে চান?</label>
+                                <input type="date" id="target-date-input" class="w-full p-3 rounded-xl border border-slate-300 bg-white text-slate-800 focus:ring-2 focus:ring-brand-500 text-sm font-semibold">
+                            </div>
+
+                            <button onclick="calculateAge()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition active:scale-95">
+                                <i class="fa-solid fa-calculator mr-1.5"></i> বয়স গণনা করুন
+                            </button>
+                        </div>
+
+                        <!-- Result Display -->
+                        <div id="age-result-box" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 rounded-2xl shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[260px]">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-400">আপনার বর্তমান বয়স</span>
+                                
+                                <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+                                    <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                                        <div id="age-years" class="text-2xl sm:text-3xl font-extrabold text-brand-300">0</div>
+                                        <div class="text-xs text-slate-300 mt-1">বছর</div>
+                                    </div>
+                                    <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                                        <div id="age-months" class="text-2xl sm:text-3xl font-extrabold text-brand-300">0</div>
+                                        <div class="text-xs text-slate-300 mt-1">মাস</div>
+                                    </div>
+                                    <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                                        <div id="age-days" class="text-2xl sm:text-3xl font-extrabold text-brand-300">0</div>
+                                        <div class="text-xs text-slate-300 mt-1">দিন</div>
+                                    </div>
+                                </div>
+
+                                <!-- Detailed Stats -->
+                                <div class="mt-5 space-y-1.5 text-xs text-slate-300 border-t border-white/10 pt-4">
+                                    <div class="flex justify-between">
+                                        <span>মোট দিন:</span>
+                                        <span id="total-days" class="font-bold text-white">০ দিন</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>পরবর্তী জন্মদিন:</span>
+                                        <span id="next-birthday" class="font-bold text-brand-300">--</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Bangla Date Converter -->
+            <section id="date-section" class="scroll-mt-20">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/80">
+                    <div class="flex items-center space-x-3 space-x-reverse border-b border-slate-100 pb-4 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800">ইংরেজি ↔ বাংলা তারিখ কনভার্টার</h2>
+                            <p class="text-xs text-slate-500">খ্রিস্টাব্দ তারিখ থেকে বঙ্গাব্দ বাংলা তারিখ ও ঋতু জানুন</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4 bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                            <label class="block text-xs font-bold text-slate-700">ইংরেজি তারিখ নির্বাচন করুন:</label>
+                            <input type="date" id="date-picker" onchange="convertDate()" class="w-full p-3 rounded-xl border border-slate-300 bg-white text-slate-800 focus:ring-2 focus:ring-brand-500 text-sm font-semibold">
+                            <button onclick="convertDate()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition active:scale-95">
+                                <i class="fa-solid fa-[#67] fa-rotate mr-1.5"></i> তারিখ পরিবর্তন করুন
+                            </button>
+                        </div>
+
+                        <div class="glass-card bg-purple-50/50 p-6 rounded-2xl border border-purple-100 space-y-3">
+                            <div class="text-xs font-bold text-purple-700 uppercase tracking-wider">রূপান্তরিত বাংলা তারিখ</div>
+                            <div id="converted-bangla-date" class="text-xl font-extrabold text-slate-900">
+                                তারিখ নির্বাচন করুন
+                            </div>
+                            <div id="converted-season" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
+                                ঋতু: --
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4 & 5: Number Converter & Word Counter -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Tool 4: Number to Bangla Digits & Words -->
+                <section id="number-section" class="scroll-mt-20">
+                    <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200/80 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 space-x-reverse border-b border-slate-100 pb-4 mb-6">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-bold text-slate-800">সংখ্যা ও কথায় প্রকাশ</h2>
+                                    <p class="text-xs text-slate-500">ইংরেজি সংখ্যা টাইপ করে বাংলা সংখ্যা ও কথায় রূপান্তর করুন</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ইংরেজি/বাংলা সংখ্যা লিখুন:</label>
+                                    <input type="text" id="num-input" oninput="convertNumber()" placeholder="যেমন: 12500" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 font-bold focus:bg-white focus:ring-2 focus:ring-brand-500 text-sm">
+                                </div>
+
+                                <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 space-y-2">
+                                    <div>
+                                        <div class="text-[11px] font-bold text-slate-500">বাংলা সংখ্যা:</div>
+                                        <div id="num-bangla-digit" class="text-lg font-bold text-amber-900">০</div>
+                                    </div>
+                                    <div class="border-t border-amber-200/60 pt-2">
+                                        <div class="text-[11px] font-bold text-slate-500">কথা বা কথায় প্রকাশ:</div>
+                                        <div id="num-bangla-text" class="text-sm font-semibold text-slate-800">শূন্য</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tool 5: Word Counter -->
+                <section id="counter-section" class="scroll-mt-20">
+                    <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200/80 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 space-x-reverse border-b border-slate-100 pb-4 mb-6">
+                                <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg font-bold">
+                                    <i class="fa-solid fa-align-left"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-bold text-slate-800">শব্দ ও অক্ষর গণনা</h2>
+                                    <p class="text-xs text-slate-500">আপনার বাংলা প্যারাগ্রাফের পরিসংখ্যান পর্যবেক্ষণ করুন</p>
+                                </div>
+                            </div>
+
+                            <textarea id="counter-textarea" oninput="analyzeText()" placeholder="আপনার বাংলা লেখাটি এখানে পেস্ট করুন..." class="w-full h-32 p-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 text-xs sm:text-sm focus:bg-white focus:ring-2 focus:ring-brand-500 resize-none transition mb-4"></textarea>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <div id="cnt-words" class="text-base font-bold text-slate-800">০</div>
+                                    <div class="text-[10px] text-slate-500 font-medium">শব্দ</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <div id="cnt-chars" class="text-base font-bold text-slate-800">০</div>
+                                    <div class="text-[10px] text-slate-500 font-medium">মোট অক্ষর</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <div id="cnt-paragraphs" class="text-base font-bold text-slate-800">০</div>
+                                    <div class="text-[10px] text-slate-500 font-medium">অনুচ্ছেদ</div>
+                                </div>
+                                <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                                    <div id="cnt-time" class="text-base font-bold text-slate-800">০ মিনিট</div>
+                                    <div class="text-[10px] text-slate-500 font-medium">পড়ার সময়</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION 6: EMI & Loan Calculator -->
+            <section id="loan-section" class="scroll-mt-20">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200/80">
+                    <div class="flex items-center space-x-3 space-x-reverse border-b border-slate-100 pb-4 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-[#30] fa-calculator"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800">ঋণ ও ইএমআই (EMI) ক্যালকুলেটর</h2>
+                            <p class="text-xs text-slate-500">আপনার ঋণের পরিমাণ ও সুদের হারের উপর ভিত্তি করে প্রতি মাসের ইএমআই হিসেব করুন</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-4 md:col-span-2 bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ঋণের পরিমাণ (টাকা):</label>
+                                    <input type="number" id="emi-amount" value="100000" oninput="calculateEMI()" class="w-full p-2.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-semibold text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">বার্ষিক সুদের হার (%):</label>
+                                    <input type="number" id="emi-rate" value="9" step="0.1" oninput="calculateEMI()" class="w-full p-2.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-semibold text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">সময়কাল (মাস):</label>
+                                    <input type="number" id="emi-months" value="12" oninput="calculateEMI()" class="w-full p-2.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-semibold text-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-700 text-white p-6 rounded-2xl flex flex-col justify-center space-y-2 text-center shadow-lg">
+                            <span class="text-xs font-semibold text-teal-200 uppercase">মাসিক কিস্তি (EMI)</span>
+                            <div id="emi-monthly-result" class="text-2xl sm:text-3xl font-extrabold text-white">৳ 0</div>
+                            <div class="text-[11px] text-teal-200 border-t border-teal-600 pt-2 mt-2">
+                                মোট পরিশোধ: <span id="emi-total-result" class="font-bold text-white">৳ 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SEO Info & FAQ Section -->
+        <section class="bg-slate-100/70 border-t border-slate-200/80 py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">সাধারণ জিজ্ঞাসা (FAQ)</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">বাংলাটুলস ওয়েবসাইট ব্যবহার সম্পর্কিত কিছু প্রশ্ন ও উত্তর</p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded-2xl p-4 border border-slate-200 shadow-sm cursor-pointer">
+                        <summary class="flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base list-none">
+                            <span>বিজয় থেকে ইউনিকোড কিভাবে কনভার্ট করবেন?</span>
+                            <span class="transition group-open:rotate-180 text-brand-600"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+                        </summary>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                            উপরে বিজয় ↔ ইউনিকোড বক্সে আপনার বিজয় ফন্টে লেখা টেক্সট পেস্ট করার সাথে সাথে রিয়েল-টাইমে ডানপাশের বক্সে ইউনিকোড আউটপুট চলে আসবে। সেখান থেকে ‘কপি করুন’ বাটনে ক্লিক করে কাজ সম্পাদন করতে পারবেন।
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl p-4 border border-slate-200 shadow-sm cursor-pointer">
+                        <summary class="flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base list-none">
+                            <span>বাংলাটুলস কি অ্যান্ড্রোয়েড বা মোবাইল ফ্রেন্ডলি?</span>
+                            <span class="transition group-open:rotate-180 text-brand-600"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+                        </summary>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                            হ্যাঁ, বাংলাটুলস সম্পূর্ণ মোবাইল-ফার্স্ট ডিজাইনে নির্মিত। যেকোনো অ্যান্ড্রোয়েড ডিভাইস, আইফোন বা ট্যাবলেটে অত্যন্ত সাবলীল ও দ্রুতগতিতে ব্যবহার করা যায়।
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl p-4 border border-slate-200 shadow-sm cursor-pointer">
+                        <summary class="flex items-center justify-between font-bold text-slate-800 text-sm sm:text-base list-none">
+                            <span>বাংলাটুলস ব্যবহারে কি কোনো ফি দেওয়া লাগে?</span>
+                            <span class="transition group-open:rotate-180 text-brand-600"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+                        </summary>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                            না, বাংলাটুলসের সমস্ত টুলস এবং ক্যালকুলেটর একদম ১০০% ফ্রি এবং কোনো রেজিস্ট্রেশন বা অ্যাকাউন্ট ছাড়াই ব্যবহার করা যায়।
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm">
+                    BT
+                </div>
+                <div>
+                    <div class="text-slate-200 font-bold text-base">BanglaTools</div>
+                    <p class="text-xs text-slate-400">সর্বস্বত্ব সংরক্ষিত © <span>2026</span> BanglaTools</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 font-medium text-xs text-slate-300">
+                <a href="#converter-section" class="hover:text-brand-400 transition">বিজয় কনভার্টার</a>
+                <a href="#age-section" class="hover:text-brand-400 transition">বয়স ক্যালকুলেটর</a>
+                <a href="#date-section" class="hover:text-brand-400 transition">বাংলা তারিখ</a>
+                <a href="#number-section" class="hover:text-brand-400 transition">সংখ্যা প্রকাশ</a>
+                <a href="#counter-section" class="hover:text-brand-400 transition">শব্দ গণনাকারী</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 text-xs font-semibold">
+        <i class="fa-solid fa-circle-check text-brand-400 text-base mr-1"></i>
+        <span id="toast-message">সফলভাবে অনুলিপি করা হয়েছে!</span>
+    </div>
+
+    <!-- JavaScript Engines -->
+    <script>
+        // Global State & UI Helper Setup
+        let converterMode = 'b2u'; // b2u: Bijoy to Unicode, u2b: Unicode to Bijoy
+
+        // Mobile Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-lg';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-lg';
+            }
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // Live Tool Search Filter
+        function filterTools() {
+            const query = document.getElementById('tool-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const content = card.textContent.toLowerCase();
+                if (title.includes(query) || content.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function quickFilter(term) {
+            const searchInput = document.getElementById('tool-search');
+            searchInput.value = term;
+            filterTools();
+            document.getElementById('tools-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // English Digits to Bangla Digits Mapper
+        const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        function toBanglaNum(num) {
+            return num.toString().replace(/\d/g, d => banglaDigits[d]);
+        }
+
+        function toEngNum(str) {
+            return str.replace(/[০-৯]/g, d => banglaDigits.indexOf(d));
+        }
+
+        // Basic Bijoy ↔ Unicode conversion maps & engine logic
+        function setConverterMode(mode) {
+            converterMode = mode;
+            const btnB2U = document.getElementById('btn-mode-b2u');
+            const btnU2B = document.getElementById('btn-mode-u2b');
+            const lblInput = document.getElementById('lbl-input');
+            const lblOutput = document.getElementById('lbl-output');
+
+            if (mode === 'b2u') {
+                btnB2U.className = 'flex-1 py-2 rounded-xl bg-white text-brand-700 shadow-sm transition';
+                btnU2B.className = 'flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition';
+                lblInput.innerText = 'বিজয় ইনপুট দিন:';
+                lblOutput.innerText = 'ইউনিকোড আউটপুট:';
+            } else {
+                btnU2B.className = 'flex-1 py-2 rounded-xl bg-white text-brand-700 shadow-sm transition';
+                btnB2U.className = 'flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition';
+                lblInput.innerText = 'ইউনিকোড ইনপুট দিন:';
+                lblOutput.innerText = 'বিজয় আউটপুট:';
+            }
+            liveConvert();
+        }
+
+        // Simplified High-Performance Bijoy-Unicode Engine Mapping
+        const bijoyToUnicodeMap = {
+            'æ': 'া', 'ç': 'ি', 'è': 'ী', 'é': 'ু', 'ê': 'ূ', 'ë': 'ৃ',
+            'ì': 'ে', 'í': 'ৈ', 'î': 'ো', 'ï': 'ৌ',
+            'K': 'ক', 'L': 'খ', 'M': 'গ', 'N': 'ঘ', 'O': 'ঙ',
+            'P': 'চ', 'Q': 'ছ', 'R': 'জ', 'S': 'ঝ', 'T': 'ঞ',
+            'U': 'ট', 'V': 'ঠ', 'W': 'ড', 'X': 'ঢ', 'Y': 'ণ',
+            'Z': 'ত', 'a': 'থ', 'b': 'দ', 'c': 'ধ', 'd': 'ন',
+            'e': 'প', 'f': 'ফ', 'g': 'ব', 'h': 'ভ', 'i': 'ম',
+            'j': 'য', 'k': 'র', 'l': 'ল', 'm': 'শ', 'n': 'ষ',
+            'o': 'স', 'p': 'হ', 'q': 'ড়', 'r': 'ঢ়', 's': 'য়',
+            't': 'ৎ', 'u': 'ং', 'v': 'ঃ', 'w': 'ঁ'
+        };
+
+        function liveConvert() {
+            const input = document.getElementById('converter-input').value;
+            const outputArea = document.getElementById('converter-output');
+            
+            if (!input.trim()) {
+                outputArea.value = '';
+                return;
+            }
+
+            if (converterMode === 'b2u') {
+                // Perform conversion replace
+                let converted = input;
+                for (let key in bijoyToUnicodeMap) {
+                    converted = converted.split(key).join(bijoyToUnicodeMap[key]);
+                }
+                outputArea.value = converted;
+            } else {
+                // Unicode to Bijoy reverse mapping
+                let converted = input;
+                for (let key in bijoyToUnicodeMap) {
+                    converted = converted.split(bijoyToUnicodeMap[key]).join(key);
+                }
+                outputArea.value = converted;
+            }
+        }
+
+        function clearConverterInput() {
+            document.getElementById('converter-input').value = '';
+            document.getElementById('converter-output').value = '';
+        }
+
+        function copyConverterOutput() {
+            const output = document.getElementById('converter-output');
+            if (!output.value) return;
+            
+            output.select();
+            document.execCommand('copy');
+            showToast('টেক্সট সফলভাবে কপি হয়েছে!');
+        }
+
+        // Age Calculator Logic
+        function calculateAge() {
+            const dobVal = document.getElementById('dob-input').value;
+            const targetVal = document.getElementById('target-date-input').value;
+
+            if (!dobVal) {
+                showToast('অনুগ্রহ করে সঠিক জন্মতারিখ সিলেক্ট করুন');
+                return;
+            }
+
+            const dob = new Date(dobVal);
+            const targetDate = targetVal ? new Date(targetVal) : new Date();
+
+            if (dob > targetDate) {
+                showToast('জন্মতারিখ বর্তমান তারিখের চেয়ে বেশি হতে পারে না');
+                return;
+            }
+
+            let years = targetDate.getFullYear() - dob.getFullYear();
+            let months = targetDate.getMonth() - dob.getMonth();
+            let days = targetDate.getDate() - dob.getDate();
+
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const totalTime = targetDate.getTime() - dob.getTime();
+            const totalDaysVal = Math.floor(totalTime / (1000 * 3600 * 24));
+
+            // Next Birthday calculation
+            let nextBday = new Date(targetDate.getFullYear(), dob.getMonth(), dob.getDate());
+            if (targetDate > nextBday) {
+                nextBday.setFullYear(targetDate.getFullYear() + 1);
+            }
+            const diffNext = Math.ceil((nextBday.getTime() - targetDate.getTime()) / (1000 * 3600 * 24));
+
+            // Update UI
+            document.getElementById('age-years').innerText = toBanglaNum(years);
+            document.getElementById('age-months').innerText = toBanglaNum(months);
+            document.getElementById('age-days').innerText = toBanglaNum(days);
+            document.getElementById('total-days').innerText = toBanglaNum(totalDaysVal) + ' দিন';
+            document.getElementById('next-birthday').innerText = toBanglaNum(diffNext) + ' দিন বাকি';
+        }
+
+        // Gregorian to Bangla Date Conversion Algorithm
+        const banglaMonths = ['বৈশাখ', 'জ্যৈষ্ঠ', 'আষাঢ়', 'শ্রাবণ', 'ভাদ্র', 'আশ্বিন', 'কার্তিক', 'অগ্রহায়ণ', 'পৌষ', 'মাঘ', 'ফাল্গুন', 'চৈত্র'];
+        const banglaSeasons = ['গ্রীষ্ম', 'গ্রীষ্ম', 'বর্ষা', 'বর্ষা', 'শরৎ', 'শরৎ', 'হেমন্ত', 'হেমন্ত', 'শীত', 'শীত', 'বসন্ত', 'বসন্ত'];
+        const banglaDays = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+
+        function getBanglaDate(date) {
+            const day = date.getDate();
+            const month = date.getMonth(); // 0 - 11
+            const year = date.getFullYear();
+            const dayOfWeek = banglaDays[date.getDay()];
+
+            // Revised Standard Bangla Calendar Logic (April 14 = 1 Baishakh)
+            let bMonthIndex = 0;
+            let bDay = 1;
+            let bYear = year - 593;
+
+            // Simplified standard cutoff calculation
+            if (month === 3 && day >= 14) { // April 14+
+                bMonthIndex = 0; bDay = day - 13;
+            } else if (month === 3 && day < 14) { // April < 14
+                bMonthIndex = 11; bDay = day + 17; bYear--;
+            } else if (month === 4 && day >= 15) { // May
+                bMonthIndex = 1; bDay = day - 14;
+            } else if (month === 4 && day < 15) {
+                bMonthIndex = 0; bDay = day + 17;
+            } else if (month === 5 && day >= 15) { // June
+                bMonthIndex = 2; bDay = day - 14;
+            } else if (month === 5 && day < 15) {
+                bMonthIndex = 1; bDay = day + 17;
+            } else if (month === 6 && day >= 16) { // July
+                bMonthIndex = 3; bDay = day - 15;
+            } else if (month === 6 && day < 16) {
+                bMonthIndex = 2; bDay = day + 16;
+            } else if (month === 7 && day >= 16) { // August
+                bMonthIndex = 4; bDay = day - 15;
+            } else if (month === 7 && day < 16) {
+                bMonthIndex = 3; bDay = day + 16;
+            } else if (month === 8 && day >= 16) { // September
+                bMonthIndex = 5; bDay = day - 15;
+            } else if (month === 8 && day < 16) {
+                bMonthIndex = 4; bDay = day + 16;
+            } else if (month === 9 && day >= 17) { // October
+                bMonthIndex = 6; bDay = day - 16;
+            } else if (month === 9 && day < 17) {
+                bMonthIndex = 5; bDay = day + 15;
+            } else if (month === 10 && day >= 16) { // November
+                bMonthIndex = 7; bDay = day - 15;
+            } else if (month === 10 && day < 16) {
+                bMonthIndex = 6; bDay = day + 15;
+            } else if (month === 11 && day >= 16) { // December
+                bMonthIndex = 8; bDay = day - 15;
+            } else if (month === 11 && day < 16) {
+                bMonthIndex = 7; bDay = day + 15;
+            } else if (month === 0 && day >= 15) { // January
+                bMonthIndex = 9; bDay = day - 14; bYear--;
+            } else if (month === 0 && day < 15) {
+                bMonthIndex = 8; bDay = day + 16; bYear--;
+            } else if (month === 1 && day >= 14) { // February
+                bMonthIndex = 10; bDay = day - 13; bYear--;
+            } else if (month === 1 && day < 14) {
+                bMonthIndex = 9; bDay = day + 17; bYear--;
+            } else if (month === 2 && day >= 15) { // March
+                bMonthIndex = 11; bDay = day - 14; bYear--;
+            } else if (month === 2 && day < 15) {
+                bMonthIndex = 10; bDay = day + 15; bYear--;
+            }
+
+            return {
+                dayName: dayOfWeek,
+                bDay: toBanglaNum(bDay),
+                bMonth: banglaMonths[bMonthIndex],
+                bYear: toBanglaNum(bYear),
+                season: banglaSeasons[bMonthIndex]
+            };
+        }
+
+        function updateTodayWidget() {
+            const today = new Date();
+            const info = getBanglaDate(today);
+            const engDateStr = today.toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
+            
+            document.getElementById('today-bangla-display').innerHTML = 
+                `${info.dayName}, ${info.bDay} ${info.bMonth} ${info.bYear} বঙ্গাব্দ <span class="text-xs font-medium text-slate-500 font-normal">(${engDateStr} খ্রি.)</span>`;
+        }
+
+        function convertDate() {
+            const val = document.getElementById('date-picker').value;
+            if (!val) return;
+            const date = new Date(val);
+            const info = getBanglaDate(date);
+            
+            document.getElementById('converted-bangla-date').innerText = 
+                `${info.dayName}, ${info.bDay} ${info.bMonth} ${info.bYear} বঙ্গাব্দ`;
+            document.getElementById('converted-season').innerText = `ঋতু: ${info.season}`;
+        }
+
+        // Number to Words Converter Logic
+        const ones = ['', 'এক', 'দুই', 'তিন', 'চার', 'পাঁচ', 'ছয়', 'সাত', 'আট', 'নয়', 'দশ', 'এগারো', 'বারো', 'তেরো', 'চোদ্দ', 'পনেরো', 'ষোলো', 'সতেরো', 'আঠারো', 'উনিশ'];
+        const tens = ['', '', 'বিশ', 'ত্রিশ', 'চল্লিশ', 'পঞ্চাশ', 'ষাট', 'সত্তর', 'আশি', 'নব্বই'];
+
+        function numToWords(n) {
+            n = parseInt(n);
+            if (isNaN(n) || n === 0) return 'শূন্য';
+            if (n < 0) return 'মাইনাস ' + numToWords(Math.abs(n));
+            
+            let str = '';
+            if (Math.floor(n / 10000000) > 0) {
+                str += numToWords(Math.floor(n / 10000000)) + ' কোটি ';
+                n %= 10000000;
+            }
+            if (Math.floor(n / 100000) > 0) {
+                str += numToWords(Math.floor(n / 100000)) + ' লাখ ';
+                n %= 100000;
+            }
+            if (Math.floor(n / 1000) > 0) {
+                str += numToWords(Math.floor(n / 1000)) + ' হাজার ';
+                n %= 1000;
+            }
+            if (Math.floor(n / 100) > 0) {
+                str += ones[Math.floor(n / 100)] + ' শত ';
+                n %= 100;
+            }
+            if (n > 0) {
+                if (n < 20) {
+                    str += ones[n];
+                } else {
+                    str += tens[Math.floor(n / 10)] + (n % 10 !== 0 ? ' ' + ones[n % 10] : '');
+                }
+            }
+            return str.trim();
+        }
+
+        function convertNumber() {
+            let val = document.getElementById('num-input').value;
+            val = toEngNum(val);
+            if (!val || isNaN(val)) {
+                document.getElementById('num-bangla-digit').innerText = '০';
+                document.getElementById('num-bangla-text').innerText = 'শূন্য';
+                return;
+            }
+            document.getElementById('num-bangla-digit').innerText = toBanglaNum(val);
+            document.getElementById('num-bangla-text').innerText = numToWords(val);
+        }
+
+        // Word Counter Logic
+        function analyzeText() {
+            const text = document.getElementById('counter-textarea').value;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            const chars = text.length;
+            const paragraphs = text.trim() ? text.split(/\n+/).length : 0;
+            const readTime = Math.ceil(words / 150); // ~150 words/min
+
+            document.getElementById('cnt-words').innerText = toBanglaNum(words);
+            document.getElementById('cnt-chars').innerText = toBanglaNum(chars);
+            document.getElementById('cnt-paragraphs').innerText = toBanglaNum(paragraphs);
+            document.getElementById('cnt-time').innerText = toBanglaNum(readTime) + ' মিনিট';
+        }
+
+        // EMI Calculator Logic
+        function calculateEMI() {
+            const P = parseFloat(document.getElementById('emi-amount').value) || 0;
+            const R = (parseFloat(document.getElementById('emi-rate').value) || 0) / 12 / 100;
+            const N = parseFloat(document.getElementById('emi-months').value) || 0;
+
+            if (P <= 0 || R <= 0 || N <= 0) {
+                document.getElementById('emi-monthly-result').innerText = '৳ ০';
+                document.getElementById('emi-total-result').innerText = '৳ ০';
+                return;
+            }
+
+            const emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+            const total = emi * N;
+
+            document.getElementById('emi-monthly-result').innerText = '৳ ' + toBanglaNum(Math.round(emi).toLocaleString('en-IN'));
+            document.getElementById('emi-total-result').innerText = '৳ ' + toBanglaNum(Math.round(total).toLocaleString('en-IN'));
+        }
+
+        // Page Load Initializations
+        window.onload = function() {
+            updateTodayWidget();
+            
+            // Set default date for Dob and Target Date inputs
+            const todayStr = new Date().toISOString().split('T')[0];
+            document.getElementById('target-date-input').value = todayStr;
+            document.getElementById('date-picker').value = todayStr;
+
+            // Run initial conversions
+            calculateEMI();
+        };
+    </script>
+</body>
+</html>
